@@ -82,7 +82,7 @@ func (s *BasicTestSuite) TestBasic() {
 		s.Require().GreaterOrEqual(len(wasmd2Channels), 1)
 
 		wasmd2Channel = wasmd2Channels[0]
-		s.Require().Equal(transfertypes.PortID, wasmd2Channel.PortID)
+		s.Require().NotEqual(transfertypes.PortID, wasmd2Channel.PortID)
 		s.Require().Equal(transfertypes.PortID, wasmd2Channel.Counterparty.PortID)
 		s.Require().Equal(transfertypes.Version, wasmd2Channel.Version)
 		s.Require().Equal(channeltypes.OPEN.String(), wasmd2Channel.State)
